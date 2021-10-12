@@ -2,6 +2,7 @@ package com.qa.dfe.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,13 @@ import com.qa.dfe.data.FootballPlayers;
 public class ServiceList implements ServiceData {
 
 	private List<FootballPlayers> footballplayers = new ArrayList<>();
-
+    
+	@Override
+	public List<FootballPlayers> getFootballPlayersByName(String name) {
+	return this.footballplayers.stream().filter(footballplayers -> name.equalsIgnoreCase(footballplayers.getName()))
+	.collect(Collectors.toList());
+	
+	}
 	@Override
 	public FootballPlayers getFootballPlayersByIndex(Integer id) {
 
@@ -45,5 +52,7 @@ public class ServiceList implements ServiceData {
 		FootballPlayers toDelete = this.footballplayers.get(id);
 		this.footballplayers.remove(toDelete);
 	}
+
+	
 
 }

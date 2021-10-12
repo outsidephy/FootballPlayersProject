@@ -32,6 +32,10 @@ public class DFEController {
 	public FootballPlayers getFootballPlayersByIndex(@PathVariable Integer id) {
 	return this.service.getFootballPlayersByIndex(id);
 }
+	@GetMapping("/getFootballPlayersByName/{name}") 
+	public List<FootballPlayers> getFootballPlayersByName(@PathVariable String name) {
+	return this.service.getFootballPlayersByName(name);
+}
 
     @GetMapping
     public List<FootballPlayers> getAllFootballPlayers(){

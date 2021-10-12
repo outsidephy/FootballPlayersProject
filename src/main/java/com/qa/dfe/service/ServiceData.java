@@ -6,6 +6,8 @@ import com.qa.dfe.data.FootballPlayers;
 
 public interface ServiceData {
 	
+	public List<FootballPlayers> getFootballPlayersByName(String name);
+	
 	public FootballPlayers getFootballPlayersByIndex(Integer id);
 	
 	public List<FootballPlayers> getAllFootballPlayers();
@@ -15,6 +17,7 @@ public interface ServiceData {
 	public FootballPlayers updateFootballPlayers(FootballPlayers footballplayers, Integer id);
 
 	public void deleteFootballPlayers(Integer id);
+
 
 	
 	

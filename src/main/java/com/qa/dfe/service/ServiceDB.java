@@ -19,6 +19,11 @@ public class ServiceDB implements ServiceData {
 		super();
 		this.repo = repo;
 	}
+	
+	@Override
+	public List<FootballPlayers> getFootballPlayersByName(String name) {
+		return this.repo.findByName(name);
+	}
 
 	@Override
 	public FootballPlayers getFootballPlayersByIndex(Integer id) {
