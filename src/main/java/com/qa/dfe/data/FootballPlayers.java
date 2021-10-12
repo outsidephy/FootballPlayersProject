@@ -10,14 +10,16 @@ public class FootballPlayers {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	private Long id;
+    private Integer id;
+	
 	private String name;
+	
 	private String teamName;
+	
 	private String divison;
 	
 	
-	public FootballPlayers(Long id, String name, String teamName, String divison) {
+	public FootballPlayers(Integer id, String name, String teamName, String divison) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -34,11 +36,11 @@ public class FootballPlayers {
 	
 	
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
