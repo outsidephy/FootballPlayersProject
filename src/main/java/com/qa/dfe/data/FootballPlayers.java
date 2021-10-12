@@ -1,38 +1,69 @@
 package com.qa.dfe.data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class FootballPlayers {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	private Long id;
 	private String name;
 	private String teamName;
 	private String divison;
-	public FootballPlayers(String name, String teamName, String divison) {
+	
+	
+	public FootballPlayers(Long id, String name, String teamName, String divison) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.teamName = teamName;
 		this.divison = divison;
 	}
+
+	
 	
 	public FootballPlayers() {
 		super();
 	}
 	
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getTeamName() {
 		return teamName;
 	}
+
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
-	public String getNationality() {
+
+	public String getDivison() {
 		return divison;
 	}
-	public void setNationality(String nationality) {
-		this.divison = nationality;
+
+	public void setDivison(String divison) {
+		this.divison = divison;
 	}
 
 	@Override

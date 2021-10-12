@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.qa.dfe.data.FootballPlayers;
 
-@Primary
+//@Primary
 @Service
 public class ServiceList implements ServiceData {
 
