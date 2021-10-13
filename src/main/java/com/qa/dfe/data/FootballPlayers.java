@@ -1,5 +1,7 @@
 package com.qa.dfe.data;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -76,6 +78,28 @@ public class FootballPlayers {
 	@Override
 	public String toString() {
 		return "FootballPlayers [name=" + name + ", teamName=" + teamName + ", division=" + division + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(division, id, name, teamName);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FootballPlayers other = (FootballPlayers) obj;
+		return Objects.equals(division, other.division) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && Objects.equals(teamName, other.teamName);
 	}
 
 
