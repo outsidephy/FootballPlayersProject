@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.context.annotation.Primary;
 
 import com.qa.dfe.data.FootballPlayers;
+
+import com.qa.dfe.exception.FootballPlayersnotFoundException;
 import com.qa.dfe.repo.FootballPlayersRepo;
 
 @Service
@@ -27,7 +29,7 @@ public class ServiceDB implements ServiceData {
 
 	@Override
 	public FootballPlayers getFootballPlayersByIndex(Integer id) {
-	return this.repo.findById(id).get();
+	return this.repo.findById(id).orElseThrow(FootballPlayersnotFoundException::new);
 	}
 
 	@Override
