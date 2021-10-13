@@ -16,15 +16,15 @@ public class FootballPlayers {
 	
 	private String teamName;
 	
-	private String divison;
+	private String division;
 	
 	
-	public FootballPlayers(Integer id, String name, String teamName, String divison) {
+	public FootballPlayers(Integer id, String name, String teamName, String division) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.teamName = teamName;
-		this.divison = divison;
+		this.division = division;
 	}
 
 	
@@ -60,17 +60,22 @@ public class FootballPlayers {
 		this.teamName = teamName;
 	}
 
-	public String getDivison() {
-		return divison;
+
+	public String getDivision() {
+		return division;
 	}
 
-	public void setDivison(String divison) {
-		this.divison = divison;
+
+
+	public void setDivision(String division) {
+		this.division = division;
 	}
+
+
 
 	@Override
 	public String toString() {
-		return "FootballPlayers [name=" + name + ", teamName=" + teamName + ", divison=" + divison + "]";
+		return "FootballPlayers [name=" + name + ", teamName=" + teamName + ", division=" + division + "]";
 	}
 
 

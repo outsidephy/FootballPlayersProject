@@ -37,7 +37,7 @@ public class DFEController {
 	return this.service.getFootballPlayersByName(name);
 }
 
-    @GetMapping
+    @GetMapping("/getAllFootballPlayers")
     public List<FootballPlayers> getAllFootballPlayers(){
 	return this.service.getAllFootballPlayers();
 }
@@ -50,7 +50,7 @@ public ResponseEntity<FootballPlayers> createFootballPlayers(@RequestBody Footba
 	
 }
 
-@PutMapping("/updateFootballPlayers")
+@PutMapping("/updateFootballPlayers/{id}")
 public ResponseEntity<FootballPlayers> updateFootballPlayers(@RequestBody FootballPlayers footballplayers, @PathVariable Integer id) {
 	FootballPlayers responseBody = this.service.updateFootballPlayers(footballplayers, id);
 	return new ResponseEntity<FootballPlayers>(responseBody,HttpStatus.ACCEPTED);

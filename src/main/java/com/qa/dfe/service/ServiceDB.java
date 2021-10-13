@@ -41,11 +41,14 @@ public class ServiceDB implements ServiceData {
 	}
 
 	@Override
-	public FootballPlayers updateFootballPlayers(FootballPlayers footballplayers, Integer id) {
+	public FootballPlayers updateFootballPlayers(FootballPlayers FootballPlayers, Integer id) {
+		
 		FootballPlayers toUpdate = this.repo.findById(id).get();
-		toUpdate.setName(footballplayers.getName());
-		toUpdate.setTeamName(footballplayers.getTeamName());
-		toUpdate.setDivison(footballplayers.getDivison());
+
+		toUpdate.setName(FootballPlayers.getName());
+		toUpdate.setTeamName(FootballPlayers.getTeamName());
+		toUpdate.setDivision(FootballPlayers.getDivision());
+
 		return this.repo.save(toUpdate);
 	}
 
