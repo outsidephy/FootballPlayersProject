@@ -94,8 +94,38 @@ public class FootballPlayers {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(division, id, name, teamName);
+		return Objects.hash(division, id, name, nationality, teamName);
 	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FootballPlayers other = (FootballPlayers) obj;
+		return Objects.equals(division, other.division) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && Objects.equals(nationality, other.nationality)
+				&& Objects.equals(teamName, other.teamName);
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "FootballPlayers [id=" + id + ", name=" + name + ", teamName=" + teamName + ", division=" + division
+				+ "]";
+	}
+	
+	
+
+
+
+	
 
 
 

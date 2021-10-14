@@ -63,7 +63,12 @@ public class FootballPlayersIntergrationTest {
 @Test
 void testGetAll() throws Exception {
 		String savedFootballPlayersAsJSON = this.mapper
-				.writeValueAsString(List.of(new FootballPlayers(2, "Messi", "PSG", "ligueone")));
+				.writeValueAsString(List.of(new FootballPlayers(2, "Messi", "PSG", "ligueone"),
+						new FootballPlayers(3, "Ziyech", "Chelsea", "prem"),
+						  new FootballPlayers(4,"Messi","PSG","ligueone"),
+						   new FootballPlayers(5,"Messi","PSG","ligueone")));
+		
+		
 
 		RequestBuilder request = get("/getAllFootballPlayers");
 
@@ -72,6 +77,9 @@ void testGetAll() throws Exception {
 
 		this.mvc.perform(request).andExpect(checkStatus).andExpect(checkContent);
 	}
+
+
+//[{"id":2,"name":"Messi","teamName":"PSG","division":"ligueone","nationality":null},{"id":3,"name":"Ziyech","teamName":"Chelsea","division":"prem","nationality":null},{"id":4,"name":"Messi","teamName":"PSG","division":"ligueone","nationality":null},{"id":5,"name":"Messi","teamName":"PSG","division":"ligueone","nationality":null}]
 
 @Test 
 void testGetById() throws Exception{
@@ -86,7 +94,7 @@ void testGetById() throws Exception{
 	   this.mvc.perform(request).andExpect(checkStatus).andExpect(checkContent);
 	   
 }
-	
+
 
 	@Test
 	void testUpdate() throws Exception {
