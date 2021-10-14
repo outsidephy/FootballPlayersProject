@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class FootballPlayers {
@@ -20,6 +21,8 @@ public class FootballPlayers {
 	
 	private String division;
 	
+	@ManyToOne
+	private Nationality nationality;
 	
 	public FootballPlayers(Integer id, String name, String teamName, String division) {
 		super();
@@ -27,6 +30,9 @@ public class FootballPlayers {
 		this.name = name;
 		this.teamName = teamName;
 		this.division = division;
+		
+		
+		
 	}
 
 	
@@ -74,10 +80,14 @@ public class FootballPlayers {
 	}
 
 
+	public Nationality getNationality() {
+		return nationality;
+	}
 
-	@Override
-	public String toString() {
-		return "FootballPlayers [name=" + name + ", teamName=" + teamName + ", division=" + division + "]";
+
+
+	public void setNationality(Nationality nationality) {
+		this.nationality = nationality;
 	}
 
 
@@ -89,18 +99,6 @@ public class FootballPlayers {
 
 
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		FootballPlayers other = (FootballPlayers) obj;
-		return Objects.equals(division, other.division) && Objects.equals(id, other.id)
-				&& Objects.equals(name, other.name) && Objects.equals(teamName, other.teamName);
-	}
 
 
 	
